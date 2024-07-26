@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://woorifisa-service-dev-3rd.github.io/frontend-2nd-todotodo/",
+  "homepage": "https://woorifisa-service-dev-3rd.github.io/frontend-2nd-todotodo",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
