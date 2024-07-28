@@ -80,6 +80,7 @@ function App() {
           />
           <TodoBody
             todos={filteredTodos}
+            setTodos={setTodos}
             onUpdate={updateTodoHandler}
             onDelete={deleteTodoHandler}
           />
