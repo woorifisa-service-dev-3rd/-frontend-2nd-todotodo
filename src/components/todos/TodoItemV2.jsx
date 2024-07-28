@@ -2,7 +2,17 @@ import React, { useEffect, useState } from "react";
 import IconButton from "@/components/ui/IconButton";
 import { TODO_CATEGORY_ICON } from "@/constants/icon";
 
-const TodoItemV2 = ({ todo, onUpdate, onDelete }) => {
+const TodoItemV2 = ({
+  todo,
+  draggable,
+  onUpdate,
+  onDelete,
+  onDragStart,
+  onDragEnter,
+  onDragEnd,
+  onDragOver,
+  dragging,
+}) => {
   // const [openModal, open] = useState(false);
   // const closeModal = () => open(false);
   const [isUpdateMode, setIsUpdateMode] = useState(false);
@@ -57,7 +67,16 @@ const TodoItemV2 = ({ todo, onUpdate, onDelete }) => {
   }, [category]);
 
   return (
-    <li className="flex gap-4 justify-between my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl h-auto">
+    <li
+      className={`flex gap-4 justify-between my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl h-auto cursor-pointer ${
+        dragging ? "shadow-white shadow-lg" : ""
+      }`}
+      draggable={draggable}
+      onDragStart={onDragStart}
+      onDragEnter={onDragEnter}
+      onDragEnd={onDragEnd}
+      onDragOver={onDragOver}
+    >
       <div className="w-4/5">
         <span className="text-lg font-medium text-gray-300">
           {/* {TODO_CATEGORY_ICON[todo.category]} */}
